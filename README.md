@@ -1,49 +1,70 @@
-# MyFlixAngularClient
+# chat-app
 
-The client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation.
+A chat app for mobile devices using React Native. The app provides users with a chat interface and options to share images and their location.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+## Key features:
 
-## Key features
+- A page where users can enter their name and choose a background color for the chat screen before joining the chat.
+- A page displaying the conversation, as well as an input field and submit button.
+- The chat must provide users with two additional communication features: sending images and location data.
+- Data gets stored online and offline.
 
-- The app should display a welcome view where users will be able to either log in or register an account.
-- Once authenticated, the user should now view all movies.
-- Upon clicking on a particular movie, users will be taken to a single movie view, where additional movie details will be displayed. The single movie view will contain the following additional features:
-  - A button that when clicked takes a user to the director view, where details about the director of that particular movie will be displayed.
-  - A button that when clicked takes a user to the genre view, where details about that
-    particular genre of the movie will be displayed.
+## Technologies used:
 
-## Technologies used
+JavaScript, React Native, GiftedChat, Firebase, Expo
 
-TypeScript, Angular, TypeDoc
+## Setting up the development environment:
 
-## Deployed app link
+- Clone the repository: `git clone [link to repository]
+- Install Expo CLI as a global npm package: `npm install -g expo-cli`
+- Install all project dependencies: `npm install`
+- Head over to https://expo.dev/, create an account and log in via terminal with `expo login`
+- Follow expo CLI's instructions depending on your preferred simulator (XCode, Android Studio, Expo Go)
+- Start the project: `npm start` or `expo start`
+- In case Expo cannot detect the running project, try running it with `npx expo start --tunnel`
 
-https://samia-gits-it.github.io/CheckMyFlixAngular/
+## Database configuration:
 
-## Development server
+- Go to https://firebase.google.com/ and sign in with your existing or create a new Google account
+- Go to Firebase console and click on "Create Project"
+- Once on your project's dashboard, click on "Develop" on the left, then "Cloud Firestore", then "Create Database" and follow the instructions, selecting "Test Mode"
+- Create a new collection named "messages"
+- Under "Project Settings", scroll down and click the "Firestore for Web" button (</>)
+- Choose a name for the chat app, then click "Register" and copy the configuration code to the cloned repository into components/Chat.js, replacing the following with your configuration code:
+  apiKey: '...',
+  authDomain: '...',
+  projectId: '...',
+  storageBucket: '...',
+  messagingSenderId: '...',
+  appId: '...',
+- To be able to upload photos, go to "Storage" on the left, then the "Rules" tab, then exchange "allow read, write: if false;" for "allow read, write: if true;"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Main dependencies:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- "@expo/react-native-action-sheet": "^3.14.0",
+- "@expo/webpack-config": "^0.17.0",
+- "@react-native-async-storage/async-storage": "^1.17.10",
+- "@react-native-community/masked-view": "^0.1.11",
+- "@react-native-community/netinfo": "9.3.0",
+- "@react-navigation/native": "^6.0.13",
+- "@react-navigation/stack": "^6.3.3",
+- "expo": "^46.0.16",
+- "expo-image-picker": "^13.3.1",
+- "expo-location": "^14.3.0",
+- "expo-permissions": "^13.2.0",
+- "expo-status-bar": "~1.4.0",
+- "firebase": "^8.10.1",
+- "react": "18.0.0",
+- "react-dom": "18.0.0",
+- "react-native": "0.69.6",
+- "react-native-gesture-handler": "~2.5.0",
+- "react-native-gifted-chat": "^1.0.4",
+- "react-native-maps": "0.31.1",
+- "react-native-reanimated": "~2.9.1",
+- "react-native-safe-area-context": "4.3.1",
+- "react-native-screens": "~3.15.0",
+- "react-native-web": "~0.18.7",
+- "react-navigation": "^4.4.4"
 
 ![Screenshot 1](/img/Screenshot_1.png?raw=true)
 ![Screenshot 2](/img/Screenshot_2.png?raw=true)
